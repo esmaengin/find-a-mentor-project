@@ -4,7 +4,7 @@
             <h1><router-link to="/"> Milyon Kadına Mentor </router-link></h1>
             <ul>
                 <li><router-link to= "/coaches">Mentorlerimiz</router-link></li>
-                <li><router-link to= "/requests">Requests</router-link></li>
+                <li><router-link to= "/requests">İstekler</router-link></li>
             </ul>
         </nav>
     </header>
@@ -15,7 +15,7 @@
 header {
   width: 100%;
   height: 5rem;
-  background-color: #9061ce;
+  background-color:#CD1C8B;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: #f391e3;
+  color: #C5A6C7;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: 1px solid transparent;
@@ -32,7 +32,7 @@ header a {
 a:active,
 a:hover,
 a.router-link-active {
-  border: 1px solid #f391e3;
+  border: 1px solid #571536;
 }
 
 h1 {
@@ -47,7 +47,8 @@ h1 a {
 h1 a:hover,
 h1 a:active,
 h1 a.router-link-active {
-  border-color: transparent;
+  border-color: transparent; 
+  /*tıklananan kısmın etrafına çerçeve ekliyoruz*/
 }
 
 header nav {

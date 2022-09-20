@@ -3,14 +3,23 @@
         FILTER
     </section>
     <section>
-        <div class="controls">
-            <button>Yenile</button>
-            <router-link to="/register">Mentor Ol!</router-link>
-        </div>
-        <ul v-if="hasCoaches">
-            <coach-item v-for="coach in filteredCoaches" :key="coach.id" :id="coach.id" :first-name="coach.firstName" :last-name="coach.lastName" :rate="coach.hourlyRate" :areas="coach.areas"></coach-item>
-        </ul>
-        <h3 v-else >No coaches found.</h3>
+        <base-card>
+            <div class="controls">
+                <base-button mode="outline">Yenile</base-button>
+                <base-button link to="/register">Mentor Ol</base-button>
+            </div>
+            <ul v-if="hasCoaches">
+                <coach-item 
+                v-for="coach in filteredCoaches" 
+                :key="coach.id" :id="coach.id" 
+                :first-name="coach.firstName" 
+                :last-name="coach.lastName" 
+                :rate="coach.hourlyRate" 
+                :areas="coach.areas">
+                </coach-item>
+            </ul>
+            <h3 v-else >No mentors found.</h3>
+        </base-card>
     </section>    
 </template>
 
