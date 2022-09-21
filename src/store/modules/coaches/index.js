@@ -11,7 +11,7 @@ export default {
               id: 'c1',
               firstName: 'Büşra',
               lastName: 'Yalınkılıç',
-              areas: ['frontend', 'backend', 'career'],
+              areas: ['frontend', 'backend'],
               description:
                 "I'm Büşra and I've worked as a web developer for years. Let me help you become a developer as well!",
               hourlyRate: 88
