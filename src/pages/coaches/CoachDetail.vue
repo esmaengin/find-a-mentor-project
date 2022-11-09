@@ -46,10 +46,12 @@ export default {
         },
         contactLink(){
             return this.$route.path + '/' + this.id + '/contact';
-        },
+        }
     },
     created(){
-        this.selectedCoach = this.$store.getters['coaches/coaches'].find(coach => coach.id === this.id);
+        this.selectedCoach = this.$store.getters['coaches/coaches'].find(
+          (coach) => coach.id === this.id
+        );
     },
 };
 </script>

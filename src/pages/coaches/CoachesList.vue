@@ -11,7 +11,8 @@
             <ul v-if="hasCoaches">
                 <coach-item 
                 v-for="coach in filteredCoaches" 
-                :key="coach.id" :id="coach.id" 
+                :key="coach.id" 
+                :id="coach.id" 
                 :first-name="coach.firstName" 
                 :last-name="coach.lastName" 
                 :rate="coach.hourlyRate" 
@@ -48,7 +49,7 @@ export default {
         },
         filteredCoaches() {
             const coaches = this.$store.getters['coaches/coaches'];
-            return coaches.filter(coach => {
+            return coaches.filter((coach) => {
                 if(this.activeFilters.frontend && coach.areas.includes('frontend')) {
                     return true;
                 }

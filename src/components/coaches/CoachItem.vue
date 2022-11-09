@@ -13,10 +13,7 @@
 </template>
 
 <script>
-import BaseBadge from '../ui/BaseBadge';
-import BaseButton from '../ui/BaseButton';
 export default{
-  components: { BaseButton, BaseBadge },
     props : ['id', 'firstName', 'lastName', 'rate', 'areas'],
     computed: {
         fullName() {
@@ -28,8 +25,8 @@ export default{
         coachDetaisLink() {
             return this.$route.path + '/' + this.id; // /coaches/c1
         },
-    }
-}
+    },
+};
 </script>
 
 <style scoped>

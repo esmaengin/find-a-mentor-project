@@ -1,16 +1,16 @@
 <template>
     <form @submit.prevent="submitForm">
-        <div>
+        <div class="form-control">
             <label for="email">E-Posta Adresin</label>
             <input type="email" id="email" v-model.trim="email" />
         </div>
-        <div>
+        <div class="form-control">
             <label for="message">Mesaj</label>
             <textarea rows="5" id="message" v-model.trim="message"></textarea>
         </div>
         <p class="errors" v-if ="!formIsValid"> Lütfen geçerli bir e-posta adresi girin ya da mesaj kutusunu boş bırakmayın! </p>
         <div class="actions">
-            <base-button>Mesaj GÖnder</base-button>
+            <base-button>Mesaj Gönder</base-button>
         </div>
     </form>
 </template>
@@ -22,19 +22,24 @@ export default {
             email: '',
             message: '',
             formIsValid: true
-        }
+        };
     },
     methods: {
         submitForm()  {
             this.formIsValid = true;
-            if (this.email=== '' || !this.email.includes('@') || this.message === '') {
+            if (this.email === '' || !this.email.includes('@') || this.message === '') {
                 this.formIsValid = false;
                 return;
             }
-            
-         }
-    }
-}
+            this.$store.dispatch('requests/contactCoach', {
+              email: this.email,
+              message: this.message,
+              coachId: this.$route.params.id
+            });
+            this.$router.replace('/coaches');
+         },
+    },
+};
 </script>t
 
 <style scoped>
