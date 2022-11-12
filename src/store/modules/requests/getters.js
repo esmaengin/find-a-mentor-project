@@ -1,9 +1,11 @@
 export default {
-    requests(state) {
-        return state.requests;
+    requests(state, rootGetters) {
+        const coachId = rootGetters.userId;
+        console.log(state.requests);
+        return state.requests.filter(req => req.coachId === coachId);
     },
-    hasRequests(state) {
-        return state.requests && state.requests.length > 0;
+    hasRequests(getters) {
+        return getters.requests && getters.requests.length > 0;
         // en az bir istek varsa sonuç verir
     }
 };

@@ -6,7 +6,8 @@
             </header>
             <ul v-if="hasRequests">
                 <request-item 
-                v-for="req in receivedRequests" :key="req.id" 
+                v-for="req in receivedRequests" 
+                :key="req.id" 
                 :email="req.userEmail" :message="req.message"
                 ></request-item>
             </ul>
@@ -26,7 +27,7 @@ export default {
             return this.$store.getters['requests/requests'];
         },
         hasRequests() {
-            return this.$store.getters
+            return this.$store.getters['requests/hasRequests'];
         }
     }
 }
