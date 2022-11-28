@@ -1,4 +1,5 @@
 <template>
+<div>
     <base-dialog :show="!!error" title="Bir hata oluştu!" @close="handleError">
         <p>{{ error }}</p>
     </base-dialog>
@@ -27,7 +28,8 @@
             </ul>
             <h3 v-else >No mentors found.</h3>
         </base-card>
-    </section>    
+    </section> 
+</div>       
 </template>
 
 <script>
